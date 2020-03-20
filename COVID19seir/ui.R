@@ -87,7 +87,7 @@ fluidPage(
                                 sliderInput("s2", "Reduction in transmission from severe infections", 0, 100, 0, pre="%",step=1, animate=TRUE),
                                 sliderInput("s3", "Reduction in transmission rate from critical infections", 0, 100, 0, pre="%",step=1, animate=TRUE),
                                 radioButtons("RoundOne", "Round values to nearest integar post-intervention?",
-                                             choices = list("True" = "True","False" = "False"),inline=TRUE),
+                                             choices = list("True" = "True","False" = "False"),inline=TRUE)
                               ),
                               p(HTML("<b>User instructions:</b> The graph shows the expected numbers of individuals over time who are infected, recovered, susceptible, or dead over time, with and without an intervention. Infected individuals first pass through an exposed/incubation phase where they are asymptomatic and not infectious, and then move into a symptomatic and infections stage classified by the clinical status of infection (mild, severe, or critical). A more detailed description of the model is provided in the Model Description tab. The population size, initial condition, and parameter values used to simulate the spread of infection can be specified through the sliders located in the left-hand panel. Default slider values are equal to estimates taken from the literature (see Sources tab). The strength and timing of the intervention is controlled by the sliders below the plot. To reset default values, click on the <em>Reset all</em> button located on the bottom of the panel. The plot is interactive: Hover over it to get values, double-click a curve in the legend to isolate it, or single-click to remove it. Dragging over a range allows zooming."))
                             )
@@ -136,8 +136,8 @@ fluidPage(
                                   column(width = 4,
                                          uiOutput("CrisisVentCap")
                                   )
-                                ),
-                                ),
+                                )
+                              ),
                               wellPanel(
                                 h4(div(HTML("<em>Set intervention parameters...</em>"))),
                                 selectInput("VarShowCap",
@@ -152,7 +152,7 @@ fluidPage(
                                 sliderInput("s2C", "Reduction in transmission rate (severe infections) ", 0, 100, 0, pre="%",step=1, animate=TRUE),
                                 sliderInput("s3C", "Reduction in transmission rate (critical infections) ", 0, 100, 0, pre="%",step=1, animate=TRUE),
                                 radioButtons("RoundOneCap", "Round values to nearest integar post-intervention?",
-                                             choices = list("True" = "True","False" = "False"), inline=TRUE),
+                                             choices = list("True" = "True","False" = "False"), inline=TRUE)
                               ),
                               p(HTML("<b>User instructions:</b> The graph shows the expected numbers of individuals over time who are infected, recovered, susceptible, or dead over time, with and without an intervention. Infected individuals first pass through an exposed/incubation phase where they are asymptomatic and not infectious, and then move into a symptomatic and infections stage classified by the clinical status of infection (mild, severe, or critical). A more detailed description of the model is provided in the Model Description tab. The population size, initial condition, and parameter values used to simulate the spread of infection can be specified through the sliders located in the left-hand panel. Default slider values are equal to estimates taken from the literature (see Sources tab). The strength and timing of the intervention is controlled by the sliders below the plot. To reset default values, click on the <em>Reset all</em> button located on the bottom of the panel. The plot is interactive: Hover over it to get values, double-click a curve in the legend to isolate it, or single-click to remove it. Dragging over a range allows zooming."))
                             )
@@ -169,7 +169,7 @@ fluidPage(
                                           #includeMarkdown("SEIR.Rmd"),
                                           h3("Rate parameters of dynamic model"),
                                           p(HTML("These parameters can be changed using the sliders in the other tabs. The values in this table represent the current values chosen via the sliders. Note that the transmission rates chosen by the sliders are always scaled by \\(N\\), so that \\(\\beta*N\\) is constant as \\(N\\) changes.")),
-                                          tableOutput("ParameterTable"),br(),br(),
+                                          tableOutput("ParameterTable"),br(),br()
                           ))),
                  
                  tabPanel("Sources",
